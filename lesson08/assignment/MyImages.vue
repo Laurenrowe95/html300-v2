@@ -30,10 +30,10 @@ export default {
   return {
   links: ['Home', 'Portfolio', 'Process', 'Book a Consultation'],
   gallery:[
-  {images: required('./images/plant1.jpeg'), alt:'Pink cherry blossom flower'},
-  {images: required('./images/plant2.jpeg'), alt: 'Purple phlox'},
-  {images: required('./images/plant3.jpeg'), alt: 'Hot pink peony blossom'},
-  {images: required('./images/plant4.jpeg'), alt: 'Light purple foxglove flower'},
+  {images: required('./images/plant1.jpg'), alt:'Pink cherry blossom flower'},
+  {images: required('./images/plant2.jpg'), alt: 'Purple phlox'},
+  {images: required('./images/plant3.jpg'), alt: 'Hot pink peony blossom'},
+  {images: required('./images/plant4.jpg'), alt: 'Light purple foxglove flower'},
   ],
   }
   }
