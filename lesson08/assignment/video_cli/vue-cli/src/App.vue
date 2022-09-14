@@ -8,16 +8,22 @@
         </ul>
     </nav>
     <div class="gallery" v-for="(image,i) in gallery" :key="i">
-      <img class="img" v-bind:src="image.picture" v-bind:alt="image.alt">
+      <img class="img" v-bind:src="image.picture" v-bind:alt="image.alt"
+      @click="toggleBorder">
     </div>
   </div>
 </template>
 
+
+<script>
+  import {toggleBorder} from './src/toggle.js',
+  mixins {toggleBorder}
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"></script>
 
 <script>
-
-export default {
+  export default {
   name: 'App',
   data() {
     return {
@@ -33,7 +39,11 @@ export default {
     }
   }
 }
+
 </script>
+
+
+
 
 <style lang="scss">
 *{box-sizing: border-box;}
@@ -45,30 +55,24 @@ export default {
   $primary: #339966;
   $accent: #33cccc;
 }
-
 img{
   max-width: 100%;
 }
-
 h3 {padding-left: 20px;}
 h4 {padding-left: 20px}
 p {padding-left: 20px;}
-
 @border-radius($radius)
   -webkit-border-radius: $radius
   -ms-border-radius: $radius
   border-radius: $radius
-
 body {
 background: primary;
 color: accent;
 }
-
 div {
 background: primary;
 border-radius: 10px;
 }
-
 header {
    height: 270px;
    background-color: #339966;
@@ -76,7 +80,6 @@ header {
    display: flex;
    color: white;
 }
-
 header h1 {
   font-size: 45px;
   background-color: #339966;
@@ -93,7 +96,6 @@ header p {
     margin: 0;
     box-sizing: border-box;
   }
-
   nav {
      background-color: #ebebeb;
      height: 60px;
@@ -106,12 +108,10 @@ header p {
     padding: 0px 0px;
     text-decoration: none;
   }
-
   nav ul li a{
     position: relative;
     text-decoration: none;
   }
-
   nav ul li a::before{
     content: "";
     position: absolute;
@@ -122,8 +122,6 @@ header p {
     transition: 0.5s;
     transform-origin: left;
   }
-
-
 nav ul li a:hover:before{
   width: 100%;
   text-align: left;
@@ -139,8 +137,6 @@ nav ul li a {
    font-size: 18px;
    text-decoration: none;
  }
-
-
 nav ul li:not(:last-child):after {
    content: "/";
    position: relative;
@@ -156,26 +152,22 @@ footer {
    text-align: center;
    display: inline-block;
     }
-
     footer img {
    margin-bottom: 20px;
    display: inline-block;
 }
-
 footer {
    list-style-type: none;
    margin-top: 20px;
    margin-bottom: 20px;
    display: inline-block;
 }
-
 footer nav {
      color: white !important;
      background-color: #393939;
      display: inline-block;
      line-height: 60px;
   }
-
 footer nav ul li a {
      color: white !important;
      font-weight: bold;
@@ -187,7 +179,6 @@ small {
    font-weight: lighter;
   display: inline-block;
 }
-
 .hidden {
   position: relative;
   left: -10000px;
@@ -196,4 +187,5 @@ small {
 .hidden:focus {
   left: 0;
 }
+
 </style>
