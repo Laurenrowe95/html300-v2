@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style>
-
+<style lang="scss">
   #app {
    font-family: 'Calibri', sans-serif;
   line-height: 1.8;
